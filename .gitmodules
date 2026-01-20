@@ -1,0 +1,3 @@
+[submodule "external/anchor"]
+	path = external/anchor
+	url = https://github.com/Roenbaeck/anchor.git
