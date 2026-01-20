@@ -1,0 +1,926 @@
+{
+   "schema": {
+      "format": "0.99.16",
+      "date": "2026-01-20",
+      "time": "09:38:27",
+      "metadata": {
+         "changingRange": "datetime",
+         "encapsulation": "dbo",
+         "identity": "int",
+         "metadataPrefix": "Metadata",
+         "metadataType": "int",
+         "metadataUsage": "true",
+         "changingSuffix": "ChangedAt",
+         "identitySuffix": "ID",
+         "positIdentity": "int",
+         "positGenerator": "true",
+         "positingRange": "datetime",
+         "positingSuffix": "PositedAt",
+         "positorRange": "tinyint",
+         "positorSuffix": "Positor",
+         "reliabilityRange": "decimal(5,2)",
+         "reliabilitySuffix": "Reliability",
+         "defaultReliability": "1",
+         "deleteReliability": "0",
+         "assertionSuffix": "Assertion",
+         "partitioning": "false",
+         "entityIntegrity": "true",
+         "restatability": "true",
+         "idempotency": "false",
+         "assertiveness": "true",
+         "naming": "improved",
+         "positSuffix": "Posit",
+         "annexSuffix": "Annex",
+         "chronon": "datetime2(7)",
+         "now": "sysdatetime()",
+         "dummySuffix": "Dummy",
+         "versionSuffix": "Version",
+         "statementTypeSuffix": "StatementType",
+         "checksumSuffix": "Checksum",
+         "businessViews": "false",
+         "decisiveness": "true",
+         "equivalence": "false",
+         "equivalentSuffix": "EQ",
+         "equivalentRange": "tinyint",
+         "databaseTarget": "SQLServer",
+         "temporalization": "uni",
+         "deletability": "false",
+         "deletablePrefix": "Deletable",
+         "deletionSuffix": "Deleted",
+         "privacy": "Ignore",
+         "checksum": "false",
+         "triggers": "true",
+         "knotAliases": "false"
+      },
+      "knot": {
+         "PAT": {
+            "id": "PAT",
+            "mnemonic": "PAT",
+            "descriptor": "ParentalType",
+            "identity": "tinyint",
+            "dataRange": "varchar(42)",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false"
+            },
+            "layout": {
+               "x": "91.54",
+               "y": "310.36",
+               "fixed": "false"
+            }
+         },
+         "GEN": {
+            "id": "GEN",
+            "mnemonic": "GEN",
+            "descriptor": "Gender",
+            "identity": "bit",
+            "dataRange": "varchar(42)",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false"
+            },
+            "layout": {
+               "x": "166.59",
+               "y": "153.03",
+               "fixed": "false"
+            }
+         },
+         "PLV": {
+            "id": "PLV",
+            "mnemonic": "PLV",
+            "descriptor": "ProfessionalLevel",
+            "identity": "tinyint",
+            "dataRange": "varchar(max)",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false",
+               "checksum": "true"
+            },
+            "layout": {
+               "x": "319.10",
+               "y": "38.99",
+               "fixed": "false"
+            }
+         },
+         "UTL": {
+            "id": "UTL",
+            "mnemonic": "UTL",
+            "descriptor": "Utilization",
+            "identity": "tinyint",
+            "dataRange": "tinyint",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false"
+            },
+            "layout": {
+               "x": "588.70",
+               "y": "688.14",
+               "fixed": "false"
+            }
+         },
+         "ONG": {
+            "id": "ONG",
+            "mnemonic": "ONG",
+            "descriptor": "Ongoing",
+            "identity": "tinyint",
+            "dataRange": "varchar(3)",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false"
+            },
+            "layout": {
+               "x": "419.33",
+               "y": "114.13",
+               "fixed": "false"
+            }
+         },
+         "RAT": {
+            "id": "RAT",
+            "mnemonic": "RAT",
+            "descriptor": "Rating",
+            "identity": "tinyint",
+            "dataRange": "varchar(42)",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "false"
+            },
+            "layout": {
+               "x": "512.55",
+               "y": "106.64",
+               "fixed": "false"
+            }
+         }
+      },
+      "knots": [
+         "PAT",
+         "GEN",
+         "PLV",
+         "UTL",
+         "ONG",
+         "RAT"
+      ],
+      "anchor": {
+         "PE": {
+            "id": "PE",
+            "mnemonic": "PE",
+            "descriptor": "Performance",
+            "identity": "int",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "true"
+            },
+            "attribute": {
+               "DAT": {
+                  "id": "DAT",
+                  "mnemonic": "DAT",
+                  "descriptor": "Date",
+                  "dataRange": "datetime",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "key": {
+                     "PE|1st|1": {
+                        "id": "PE|1st|1",
+                        "stop": "1",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "1"
+                     }
+                  },
+                  "keys": [
+                     "PE|1st|1"
+                  ],
+                  "layout": {
+                     "x": "832.94",
+                     "y": "517.86",
+                     "fixed": "false"
+                  }
+               },
+               "AUD": {
+                  "id": "AUD",
+                  "mnemonic": "AUD",
+                  "descriptor": "Audience",
+                  "dataRange": "int",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "915.56",
+                     "y": "451.85",
+                     "fixed": "false"
+                  }
+               },
+               "REV": {
+                  "id": "REV",
+                  "mnemonic": "REV",
+                  "descriptor": "Revenue",
+                  "dataRange": "money",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "900.90",
+                     "y": "493.09",
+                     "fixed": "false"
+                  }
+               }
+            },
+            "attributes": [
+               "DAT",
+               "AUD",
+               "REV"
+            ],
+            "layout": {
+               "x": "820.28",
+               "y": "431.86",
+               "fixed": "false"
+            }
+         },
+         "PN": {
+            "id": "PN",
+            "mnemonic": "PN",
+            "descriptor": "Person",
+            "identity": "int",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "true"
+            },
+            "layout": {
+               "x": "231.72",
+               "y": "456.13",
+               "fixed": "false"
+            }
+         },
+         "ST": {
+            "id": "ST",
+            "mnemonic": "ST",
+            "descriptor": "Stage",
+            "identity": "int",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "true"
+            },
+            "attribute": {
+               "NAM": {
+                  "id": "NAM",
+                  "mnemonic": "NAM",
+                  "descriptor": "Name",
+                  "timeRange": "datetime",
+                  "dataRange": "varchar(42)",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "restatable": "true",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "key": {
+                     "ST|2nd|1": {
+                        "id": "ST|2nd|1",
+                        "stop": "1",
+                        "route": "2nd",
+                        "of": "ST",
+                        "branch": "1"
+                     }
+                  },
+                  "keys": [
+                     "ST|2nd|1"
+                  ],
+                  "layout": {
+                     "x": "693.38",
+                     "y": "530.60",
+                     "fixed": "false"
+                  }
+               },
+               "LOC": {
+                  "id": "LOC",
+                  "mnemonic": "LOC",
+                  "descriptor": "Location",
+                  "dataRange": "geography",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "checksum": "true",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "key": {
+                     "ST|1st|1": {
+                        "id": "ST|1st|1",
+                        "stop": "1",
+                        "route": "1st",
+                        "of": "ST",
+                        "branch": "1"
+                     },
+                     "PE|1st|4": {
+                        "id": "PE|1st|4",
+                        "stop": "4",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "2"
+                     }
+                  },
+                  "keys": [
+                     "ST|1st|1",
+                     "PE|1st|4"
+                  ],
+                  "layout": {
+                     "x": "710.57",
+                     "y": "499.21",
+                     "fixed": "false"
+                  }
+               },
+               "AVG": {
+                  "id": "AVG",
+                  "mnemonic": "AVG",
+                  "descriptor": "Average",
+                  "timeRange": "datetime",
+                  "knotRange": "UTL",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "restatable": "true",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "633.26",
+                     "y": "605.63",
+                     "fixed": "false"
+                  }
+               },
+               "MIN": {
+                  "id": "MIN",
+                  "mnemonic": "MIN",
+                  "descriptor": "Minimum",
+                  "knotRange": "UTL",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "596.00",
+                     "y": "571.60",
+                     "fixed": "false"
+                  }
+               }
+            },
+            "attributes": [
+               "NAM",
+               "LOC",
+               "AVG",
+               "MIN"
+            ],
+            "layout": {
+               "x": "670.04",
+               "y": "451.57",
+               "fixed": "false"
+            }
+         },
+         "AC": {
+            "id": "AC",
+            "mnemonic": "AC",
+            "descriptor": "Actor",
+            "identity": "int",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "true"
+            },
+            "attribute": {
+               "NAM": {
+                  "id": "NAM",
+                  "mnemonic": "NAM",
+                  "descriptor": "Name",
+                  "timeRange": "datetime",
+                  "dataRange": "varchar(42)",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "restatable": "true",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "key": {
+                     "AC|1st|1": {
+                        "id": "AC|1st|1",
+                        "stop": "1",
+                        "route": "1st",
+                        "of": "AC",
+                        "branch": "1"
+                     }
+                  },
+                  "keys": [
+                     "AC|1st|1"
+                  ],
+                  "layout": {
+                     "x": "315.56",
+                     "y": "342.16",
+                     "fixed": "false"
+                  }
+               },
+               "GEN": {
+                  "id": "GEN",
+                  "mnemonic": "GEN",
+                  "descriptor": "Gender",
+                  "knotRange": "GEN",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "247.68",
+                     "y": "201.35",
+                     "fixed": "false"
+                  }
+               },
+               "PLV": {
+                  "id": "PLV",
+                  "mnemonic": "PLV",
+                  "descriptor": "ProfessionalLevel",
+                  "timeRange": "datetime",
+                  "knotRange": "PLV",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "restatable": "true",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "layout": {
+                     "x": "346.43",
+                     "y": "133.81",
+                     "fixed": "false"
+                  }
+               }
+            },
+            "attributes": [
+               "NAM",
+               "GEN",
+               "PLV"
+            ],
+            "layout": {
+               "x": "374.64",
+               "y": "291.77",
+               "fixed": "false"
+            }
+         },
+         "PR": {
+            "id": "PR",
+            "mnemonic": "PR",
+            "descriptor": "Program",
+            "identity": "int",
+            "metadata": {
+               "capsule": "dbo",
+               "generator": "true"
+            },
+            "attribute": {
+               "NAM": {
+                  "id": "NAM",
+                  "mnemonic": "NAM",
+                  "descriptor": "Name",
+                  "dataRange": "varchar(42)",
+                  "metadata": {
+                     "privacy": "Ignore",
+                     "capsule": "dbo",
+                     "idempotent": "false",
+                     "deletable": "false"
+                  },
+                  "key": {
+                     "PR|1st|1": {
+                        "id": "PR|1st|1",
+                        "stop": "1",
+                        "route": "1st",
+                        "of": "PR",
+                        "branch": "1"
+                     },
+                     "PE|1st|7": {
+                        "id": "PE|1st|7",
+                        "stop": "7",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "3"
+                     }
+                  },
+                  "keys": [
+                     "PR|1st|1",
+                     "PE|1st|7"
+                  ],
+                  "layout": {
+                     "x": "796.60",
+                     "y": "61.24",
+                     "fixed": "false"
+                  }
+               }
+            },
+            "attributes": [
+               "NAM"
+            ],
+            "layout": {
+               "x": "769.35",
+               "y": "165.46",
+               "fixed": "false"
+            }
+         }
+      },
+      "anchors": [
+         "PE",
+         "PN",
+         "ST",
+         "AC",
+         "PR"
+      ],
+      "tie": {
+         "AC_exclusive_AC_with_ONG_currently": {
+            "id": "AC_exclusive_AC_with_ONG_currently",
+            "timeRange": "datetime",
+            "anchorRole": {
+               "AC_exclusive": {
+                  "id": "AC_exclusive",
+                  "role": "exclusive",
+                  "type": "AC",
+                  "identifier": "false"
+               },
+               "AC_with": {
+                  "id": "AC_with",
+                  "role": "with",
+                  "type": "AC",
+                  "identifier": "false"
+               }
+            },
+            "roles": [
+               "AC_exclusive",
+               "AC_with",
+               "ONG_currently"
+            ],
+            "knotRole": {
+               "ONG_currently": {
+                  "id": "ONG_currently",
+                  "role": "currently",
+                  "type": "ONG",
+                  "identifier": "false"
+               }
+            },
+            "metadata": {
+               "capsule": "dbo",
+               "restatable": "true",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "404.68",
+               "y": "199.65",
+               "fixed": "false"
+            }
+         },
+         "PE_wasHeld_ST_at": {
+            "id": "PE_wasHeld_ST_at",
+            "anchorRole": {
+               "PE_wasHeld": {
+                  "id": "PE_wasHeld",
+                  "role": "wasHeld",
+                  "type": "PE",
+                  "identifier": "true",
+                  "key": {
+                     "PE|1st|2": {
+                        "id": "PE|1st|2",
+                        "stop": "2",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "2"
+                     }
+                  },
+                  "keys": [
+                     "PE|1st|2"
+                  ]
+               },
+               "ST_at": {
+                  "id": "ST_at",
+                  "role": "at",
+                  "type": "ST",
+                  "identifier": "false",
+                  "key": {
+                     "PE|1st|3": {
+                        "id": "PE|1st|3",
+                        "stop": "3",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "2"
+                     }
+                  },
+                  "keys": [
+                     "PE|1st|3"
+                  ]
+               }
+            },
+            "roles": [
+               "PE_wasHeld",
+               "ST_at"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "779.05",
+               "y": "495.02",
+               "fixed": "false"
+            }
+         },
+         "AC_subset_PN_of": {
+            "id": "AC_subset_PN_of",
+            "anchorRole": {
+               "AC_subset": {
+                  "id": "AC_subset",
+                  "role": "subset",
+                  "type": "AC",
+                  "identifier": "false"
+               },
+               "PN_of": {
+                  "id": "PN_of",
+                  "role": "of",
+                  "type": "PN",
+                  "identifier": "false"
+               }
+            },
+            "roles": [
+               "AC_subset",
+               "PN_of"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "286.80",
+               "y": "406.90",
+               "fixed": "false"
+            }
+         },
+         "PE_at_PR_wasPlayed": {
+            "id": "PE_at_PR_wasPlayed",
+            "anchorRole": {
+               "PE_at": {
+                  "id": "PE_at",
+                  "role": "at",
+                  "type": "PE",
+                  "identifier": "true",
+                  "key": {
+                     "PE|1st|5": {
+                        "id": "PE|1st|5",
+                        "stop": "5",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "3"
+                     }
+                  },
+                  "keys": [
+                     "PE|1st|5"
+                  ]
+               },
+               "PR_wasPlayed": {
+                  "id": "PR_wasPlayed",
+                  "role": "wasPlayed",
+                  "type": "PR",
+                  "identifier": "false",
+                  "key": {
+                     "PE|1st|6": {
+                        "id": "PE|1st|6",
+                        "stop": "6",
+                        "route": "1st",
+                        "of": "PE",
+                        "branch": "3"
+                     }
+                  },
+                  "keys": [
+                     "PE|1st|6"
+                  ]
+               }
+            },
+            "roles": [
+               "PE_at",
+               "PR_wasPlayed"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "848.90",
+               "y": "273.39",
+               "fixed": "false"
+            }
+         },
+         "PE_in_AC_wasCast": {
+            "id": "PE_in_AC_wasCast",
+            "anchorRole": {
+               "PE_in": {
+                  "id": "PE_in",
+                  "role": "in",
+                  "type": "PE",
+                  "identifier": "true"
+               },
+               "AC_wasCast": {
+                  "id": "AC_wasCast",
+                  "role": "wasCast",
+                  "type": "AC",
+                  "identifier": "true"
+               }
+            },
+            "roles": [
+               "PE_in",
+               "AC_wasCast"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "592.24",
+               "y": "364.28",
+               "fixed": "false"
+            }
+         },
+         "AC_part_PR_in_RAT_got": {
+            "id": "AC_part_PR_in_RAT_got",
+            "timeRange": "datetime",
+            "anchorRole": {
+               "AC_part": {
+                  "id": "AC_part",
+                  "role": "part",
+                  "type": "AC",
+                  "identifier": "true"
+               },
+               "PR_in": {
+                  "id": "PR_in",
+                  "role": "in",
+                  "type": "PR",
+                  "identifier": "true"
+               }
+            },
+            "roles": [
+               "AC_part",
+               "PR_in",
+               "RAT_got"
+            ],
+            "knotRole": {
+               "RAT_got": {
+                  "id": "RAT_got",
+                  "role": "got",
+                  "type": "RAT",
+                  "identifier": "false"
+               }
+            },
+            "metadata": {
+               "capsule": "dbo",
+               "restatable": "true",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "544.18",
+               "y": "180.73",
+               "fixed": "false"
+            }
+         },
+         "ST_at_PR_isPlaying": {
+            "id": "ST_at_PR_isPlaying",
+            "timeRange": "datetime",
+            "anchorRole": {
+               "ST_at": {
+                  "id": "ST_at",
+                  "role": "at",
+                  "type": "ST",
+                  "identifier": "true"
+               },
+               "PR_isPlaying": {
+                  "id": "PR_isPlaying",
+                  "role": "isPlaying",
+                  "type": "PR",
+                  "identifier": "true"
+               }
+            },
+            "roles": [
+               "ST_at",
+               "PR_isPlaying"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "restatable": "true",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "716.29",
+               "y": "295.31",
+               "fixed": "false"
+            }
+         },
+         "AC_parent_AC_child_PAT_having": {
+            "id": "AC_parent_AC_child_PAT_having",
+            "anchorRole": {
+               "AC_parent": {
+                  "id": "AC_parent",
+                  "role": "parent",
+                  "type": "AC",
+                  "identifier": "true"
+               },
+               "AC_child": {
+                  "id": "AC_child",
+                  "role": "child",
+                  "type": "AC",
+                  "identifier": "true"
+               }
+            },
+            "roles": [
+               "AC_parent",
+               "AC_child",
+               "PAT_having"
+            ],
+            "knotRole": {
+               "PAT_having": {
+                  "id": "PAT_having",
+                  "role": "having",
+                  "type": "PAT",
+                  "identifier": "true"
+               }
+            },
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "216.75",
+               "y": "301.40",
+               "fixed": "false"
+            }
+         },
+         "PR_content_ST_location_PE_of": {
+            "id": "PR_content_ST_location_PE_of",
+            "anchorRole": {
+               "PR_content": {
+                  "id": "PR_content",
+                  "role": "content",
+                  "type": "PR",
+                  "identifier": "false"
+               },
+               "ST_location": {
+                  "id": "ST_location",
+                  "role": "location",
+                  "type": "ST",
+                  "identifier": "false"
+               },
+               "PE_of": {
+                  "id": "PE_of",
+                  "role": "of",
+                  "type": "PE",
+                  "identifier": "true"
+               }
+            },
+            "roles": [
+               "PR_content",
+               "ST_location",
+               "PE_of"
+            ],
+            "metadata": {
+               "capsule": "dbo",
+               "deletable": "false",
+               "idempotent": "false"
+            },
+            "layout": {
+               "x": "790.46",
+               "y": "334.43",
+               "fixed": "false"
+            }
+         }
+      },
+      "ties": [
+         "AC_exclusive_AC_with_ONG_currently",
+         "PE_wasHeld_ST_at",
+         "AC_subset_PN_of",
+         "PE_at_PR_wasPlayed",
+         "PE_in_AC_wasCast",
+         "AC_part_PR_in_RAT_got",
+         "ST_at_PR_isPlaying",
+         "AC_parent_AC_child_PAT_having",
+         "PR_content_ST_location_PE_of"
+      ]
+   }
+}

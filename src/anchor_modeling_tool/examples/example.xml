@@ -1,0 +1,164 @@
+<schema format="0.99.16" date="2026-01-20" time="09:22:58">
+<metadata changingRange="datetime" encapsulation="dbo" identity="int" metadataPrefix="Metadata" metadataType="int" metadataUsage="true" changingSuffix="ChangedAt" identitySuffix="ID" positIdentity="int" positGenerator="true" positingRange="datetime" positingSuffix="PositedAt" positorRange="tinyint" positorSuffix="Positor" reliabilityRange="decimal(5,2)" reliabilitySuffix="Reliability" defaultReliability="1" deleteReliability="0" assertionSuffix="Assertion" partitioning="false" entityIntegrity="true" restatability="true" idempotency="false" assertiveness="true" naming="improved" positSuffix="Posit" annexSuffix="Annex" chronon="datetime2(7)" now="sysdatetime()" dummySuffix="Dummy" versionSuffix="Version" statementTypeSuffix="StatementType" checksumSuffix="Checksum" businessViews="false" decisiveness="true" equivalence="false" equivalentSuffix="EQ" equivalentRange="tinyint" databaseTarget="SQLServer" temporalization="uni" deletability="false" deletablePrefix="Deletable" deletionSuffix="Deleted" privacy="Ignore" checksum="false" triggers="true" knotAliases="false"/>
+<knot mnemonic="PAT" descriptor="ParentalType" identity="tinyint" dataRange="varchar(42)">
+<metadata capsule="dbo" generator="false"/>
+<layout x="91.54" y="310.36" fixed="false"/>
+</knot>
+<knot mnemonic="GEN" descriptor="Gender" identity="bit" dataRange="varchar(42)">
+<metadata capsule="dbo" generator="false"/>
+<layout x="166.59" y="153.03" fixed="false"/>
+</knot>
+<knot mnemonic="PLV" descriptor="ProfessionalLevel" identity="tinyint" dataRange="varchar(max)">
+<metadata capsule="dbo" generator="false" checksum="true"/>
+<layout x="319.10" y="38.99" fixed="false"/>
+</knot>
+<knot mnemonic="UTL" descriptor="Utilization" identity="tinyint" dataRange="tinyint">
+<metadata capsule="dbo" generator="false"/>
+<layout x="588.70" y="688.14" fixed="false"/>
+</knot>
+<knot mnemonic="ONG" descriptor="Ongoing" identity="tinyint" dataRange="varchar(3)">
+<metadata capsule="dbo" generator="false"/>
+<layout x="419.33" y="114.13" fixed="false"/>
+</knot>
+<knot mnemonic="RAT" descriptor="Rating" identity="tinyint" dataRange="varchar(42)">
+<metadata capsule="dbo" generator="false"/>
+<layout x="512.55" y="106.64" fixed="false"/>
+</knot>
+<anchor mnemonic="PE" descriptor="Performance" identity="int">
+<metadata capsule="dbo" generator="true"/>
+<attribute mnemonic="DAT" descriptor="Date" dataRange="datetime">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<key stop="1" route="1st" of="PE" branch="1"/>
+<layout x="832.94" y="517.86" fixed="false"/>
+</attribute>
+<attribute mnemonic="AUD" descriptor="Audience" dataRange="int">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<layout x="915.56" y="451.85" fixed="false"/>
+</attribute>
+<attribute mnemonic="REV" descriptor="Revenue" dataRange="money">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<layout x="900.90" y="493.09" fixed="false"/>
+</attribute>
+<layout x="820.28" y="431.86" fixed="false"/>
+</anchor>
+<anchor mnemonic="PN" descriptor="Person" identity="int">
+<metadata capsule="dbo" generator="true"/>
+<layout x="231.72" y="456.13" fixed="false"/>
+</anchor>
+<anchor mnemonic="ST" descriptor="Stage" identity="int">
+<metadata capsule="dbo" generator="true"/>
+<attribute mnemonic="NAM" descriptor="Name" timeRange="datetime" dataRange="varchar(42)">
+<metadata privacy="Ignore" capsule="dbo" restatable="true" idempotent="false" deletable="false"/>
+<key stop="1" route="2nd" of="ST" branch="1"/>
+<layout x="693.38" y="530.60" fixed="false"/>
+</attribute>
+<attribute mnemonic="LOC" descriptor="Location" dataRange="geography">
+<metadata privacy="Ignore" capsule="dbo" checksum="true" idempotent="false" deletable="false"/>
+<key stop="1" route="1st" of="ST" branch="1"/>
+<key stop="4" route="1st" of="PE" branch="2"/>
+<layout x="710.57" y="499.21" fixed="false"/>
+</attribute>
+<attribute mnemonic="AVG" descriptor="Average" timeRange="datetime" knotRange="UTL">
+<metadata privacy="Ignore" capsule="dbo" restatable="true" idempotent="false" deletable="false"/>
+<layout x="633.26" y="605.63" fixed="false"/>
+</attribute>
+<attribute mnemonic="MIN" descriptor="Minimum" knotRange="UTL">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<layout x="596.00" y="571.60" fixed="false"/>
+</attribute>
+<layout x="670.04" y="451.57" fixed="false"/>
+</anchor>
+<anchor mnemonic="AC" descriptor="Actor" identity="int">
+<metadata capsule="dbo" generator="true"/>
+<attribute mnemonic="NAM" descriptor="Name" timeRange="datetime" dataRange="varchar(42)">
+<metadata privacy="Ignore" capsule="dbo" restatable="true" idempotent="false" deletable="false"/>
+<key stop="1" route="1st" of="AC" branch="1"/>
+<layout x="315.56" y="342.16" fixed="false"/>
+</attribute>
+<attribute mnemonic="GEN" descriptor="Gender" knotRange="GEN">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<layout x="247.68" y="201.35" fixed="false"/>
+</attribute>
+<attribute mnemonic="PLV" descriptor="ProfessionalLevel" timeRange="datetime" knotRange="PLV">
+<metadata privacy="Ignore" capsule="dbo" restatable="true" idempotent="false" deletable="false"/>
+<layout x="346.43" y="133.81" fixed="false"/>
+</attribute>
+<layout x="374.64" y="291.77" fixed="false"/>
+</anchor>
+<anchor mnemonic="PR" descriptor="Program" identity="int">
+<metadata capsule="dbo" generator="true"/>
+<attribute mnemonic="NAM" descriptor="Name" dataRange="varchar(42)">
+<metadata privacy="Ignore" capsule="dbo" idempotent="false" deletable="false"/>
+<key stop="1" route="1st" of="PR" branch="1"/>
+<key stop="7" route="1st" of="PE" branch="3"/>
+<layout x="796.60" y="61.24" fixed="false"/>
+</attribute>
+<layout x="769.35" y="165.46" fixed="false"/>
+</anchor>
+<tie timeRange="datetime">
+<anchorRole role="exclusive" type="AC" identifier="false"/>
+<anchorRole role="with" type="AC" identifier="false"/>
+<knotRole role="currently" type="ONG" identifier="false"/>
+<metadata capsule="dbo" restatable="true" deletable="false" idempotent="false"/>
+<layout x="404.68" y="199.65" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="wasHeld" type="PE" identifier="true">
+<key stop="2" route="1st" of="PE" branch="2"/>
+</anchorRole>
+<anchorRole role="at" type="ST" identifier="false">
+<key stop="3" route="1st" of="PE" branch="2"/>
+</anchorRole>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="779.05" y="495.02" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="subset" type="AC" identifier="false"/>
+<anchorRole role="of" type="PN" identifier="false"/>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="286.80" y="406.90" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="at" type="PE" identifier="true">
+<key stop="5" route="1st" of="PE" branch="3"/>
+</anchorRole>
+<anchorRole role="wasPlayed" type="PR" identifier="false">
+<key stop="6" route="1st" of="PE" branch="3"/>
+</anchorRole>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="848.90" y="273.39" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="in" type="PE" identifier="true"/>
+<anchorRole role="wasCast" type="AC" identifier="true"/>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="592.24" y="364.28" fixed="false"/>
+</tie>
+<tie timeRange="datetime">
+<anchorRole role="part" type="AC" identifier="true"/>
+<anchorRole role="in" type="PR" identifier="true"/>
+<knotRole role="got" type="RAT" identifier="false"/>
+<metadata capsule="dbo" restatable="true" deletable="false" idempotent="false"/>
+<layout x="544.18" y="180.73" fixed="false"/>
+</tie>
+<tie timeRange="datetime">
+<anchorRole role="at" type="ST" identifier="true"/>
+<anchorRole role="isPlaying" type="PR" identifier="true"/>
+<metadata capsule="dbo" restatable="true" deletable="false" idempotent="false"/>
+<layout x="716.29" y="295.31" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="parent" type="AC" identifier="true"/>
+<anchorRole role="child" type="AC" identifier="true"/>
+<knotRole role="having" type="PAT" identifier="true"/>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="216.75" y="301.40" fixed="false"/>
+</tie>
+<tie>
+<anchorRole role="content" type="PR" identifier="false"/>
+<anchorRole role="location" type="ST" identifier="false"/>
+<anchorRole role="of" type="PE" identifier="true"/>
+<metadata capsule="dbo" deletable="false" idempotent="false"/>
+<layout x="790.46" y="334.43" fixed="false"/>
+</tie>
+</schema>
